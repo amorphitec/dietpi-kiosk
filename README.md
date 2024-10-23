@@ -28,3 +28,16 @@ _**Note:** currently a wired Internet connection is required._
 2. Power on the device.
 3. The device will download and configure software required for kiosk mode.
 4. The device will reboot to a kiosk open at the configured URL.
+
+## Distributing a kiosk image
+
+To duplicate the image for distribution, use the `dietpi-imager` script as per the [dietpi docs](https://dietpi.com/docs/hardware/#script-execution):
+
+1. Insert the SD card into a Linux host.
+2. Run the `dietpi-imager` script:
+
+    ```
+    sudo G_GITOWNER=MichaIng G_GITBRANCH=master bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/MichaIng/DietPi/master/.build/images/dietpi-imager')"
+    ```
+3. Follow the prompts.
+4. Both `.img` (image) and `.img.xz` (compressed image) files will be created.
